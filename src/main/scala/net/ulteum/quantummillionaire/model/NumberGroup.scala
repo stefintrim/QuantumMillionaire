@@ -7,5 +7,7 @@ package net.ulteum.quantummillionaire.model
  * @param count the count of numbers in the group
  * @param size the size of the group given as 1 to size inclusive [1, size]
  */
-final case class NumberGroup(count: Int, size: Int)
+final case class NumberGroup(count: Int, size: Int) {
+  def isFullList: Boolean = count == size
+}
 

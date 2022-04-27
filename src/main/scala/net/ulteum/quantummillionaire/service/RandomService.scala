@@ -12,9 +12,9 @@ class RandomService(randomFunction: Int => Seq[Int]) extends LazyLogging {
    * @param numberGroup representation of size and count of numbers
    */
   def generateNumberSequence(numberGroup: NumberGroup): Seq[Int] = {
-    shuffle(1 to numberGroup.size, randomFunction(numberGroup.size))
+    val result = shuffle(1 to numberGroup.size, randomFunction(numberGroup.size))
       .take(numberGroup.count)
-      .sorted
+    if (numberGroup.isFullList) result else result.sorted
   }
 
   /**
