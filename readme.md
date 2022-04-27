@@ -3,6 +3,8 @@
 
 Welcome to the only GitHub project that absolutely 100% guarantees* that you* will win* the lottery.
 
+## Watch The Universe Split Before Your Very Eyes!
+
 By using quantum mechanical theory, this web app, based on Scala, Cats Effect and Http4s can generate a set of quantum random numbers that will make a version of you rich, rich, rich!
 
 ### But How Does It Work?
@@ -32,13 +34,14 @@ http://localhost:8080/lotto?input=<parameters>
 Where `params` is a comma separated list of # of generated numbers, and the max value of the numbers. For instance, if you want 6 numbers from 1-47 it would be
 
 ```
-http://localhost:8080/lotto?input=6,47
+http://localhost:8080/lotto?input=6,47                      <- Irish Lotto
 ```
 
 Or, if you want 5 numbers from 1-50 and 2 numbers from 1-12, it would be 
 
 ```
-http://localhost:8080/lotto?input=5,50,2,12
+http://localhost:8080/lotto?input=5,50,2,12                 <- Euromillions
 ```
+
 
 Good luck - you don't need it!
