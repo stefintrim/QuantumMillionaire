@@ -7,15 +7,6 @@ import org.http4s.dsl.io._
 
 object QuantumMillionaireRoutes {
 
-  def jokeRoutes(J: Jokes): HttpRoutes[IO] = {
-    HttpRoutes.of[IO] {
-      case GET -> Root / "joke" =>
-        for {
-          joke <- J.get
-          resp <- Ok(joke)
-        } yield resp
-    }
-  }
   implicit val numberGroupQueryParamDecoder: QueryParamDecoder[Seq[NumberGroup]] = QueryParamDecoder[String].map(_.split(",").map(_.toInt)).map(_.sliding(2, 2)).map(_.toList).map(l => l.map(m => NumberGroup(m(0), m(1))))
   object numberGroupQueryParamMatcher extends QueryParamDecoderMatcher[Seq[NumberGroup]]("input")
 
