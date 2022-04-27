@@ -5,7 +5,7 @@ import org.http4s._
 import cats.effect._
 import org.http4s.dsl.io._
 
-object QuantummillionaireRoutes {
+object QuantumMillionaireRoutes {
 
   def jokeRoutes(J: Jokes): HttpRoutes[IO] = {
     HttpRoutes.of[IO] {

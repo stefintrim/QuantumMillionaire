@@ -8,7 +8,7 @@ import org.http4s.ember.server.EmberServerBuilder
 import org.http4s.implicits._
 import org.http4s.server.middleware.Logger
 
-object QuantummillionaireServer {
+object QuantumMillionaireServer {
 
   def run: IO[Nothing] = {
     for {
@@ -21,8 +21,8 @@ object QuantummillionaireServer {
       // want to extract a segments not checked
       // in the underlying routes.
       httpApp = (
-  QuantummillionaireRoutes.helloWorldRoutes(helloWorldAlg) <+>
-  QuantummillionaireRoutes.jokeRoutes(jokeAlg)
+  QuantumMillionaireRoutes.helloWorldRoutes(helloWorldAlg) <+>
+  QuantumMillionaireRoutes.jokeRoutes(jokeAlg)
         ).orNotFound
 
       // With Middlewares in place
