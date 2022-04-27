@@ -1,7 +1,7 @@
 ### Who wants to be a ...
 # QUANTUM MILLIONAIRE!
 
-Welcome to the only GitHub project that absolutely 100% guarantees* that you* will win* the lottery.
+Welcome to the only GitHub project that absolutely ***100% guarantees*** that you ***will*** win the lottery.
 
 # Watch The Universe Split Before Your Very Eyes!
 
