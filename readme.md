@@ -3,11 +3,11 @@
 
 Welcome to the only GitHub project that absolutely 100% guarantees* that you* will win* the lottery.
 
-## Watch The Universe Split Before Your Very Eyes!
+# Watch The Universe Split Before Your Very Eyes!
 
 By using quantum mechanical theory, this web app, based on Scala, Cats Effect and Http4s can generate a set of quantum random numbers that will make a version of you rich, rich, rich!
 
-### But How Does It Work?
+## But How Does It Work?
 
 In 1957, Hugh Everett III wrote his doctoral dissertation proposing an austere interpretation of quantum mechanics that does not include wave function collapse, which was seen as many as a problem with existing interpretations, such as the Copenhagen Interpretation.  
 
@@ -19,7 +19,7 @@ By using a quantum random number generator, this app will cause the universe to 
 
 The physicist Max Tegmark goes further to suggest "Quantum Immortality" whereby, any quantum event that might kill you will not subjectively happen, since you will only exist in universes where you are alive (that's a massive simplification). By extending supposition onto supposition, perhaps you are more likely to exist longer in a universe where you are rich?
 
-### Usage
+## Usage
 
 Build and run with
 ```
@@ -42,6 +42,5 @@ Or, if you want 5 numbers from 1-50 and 2 numbers from 1-12, it would be
 ```
 http://localhost:8080/lotto?input=5,50,2,12                 <- Euromillions
 ```
-
 
 Good luck - you don't need it!
