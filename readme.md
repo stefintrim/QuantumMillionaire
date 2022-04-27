@@ -17,23 +17,28 @@ By using a quantum random number generator, this app will cause the universe to 
 
 The physicist Max Tegmark goes further to suggest "Quantum Immortality" whereby, any quantum event that might kill you will not subjectively happen, since you will only exist in universes where you are alive (that's a massive simplification). By extending supposition onto supposition, perhaps you are more likely to exist longer in a universe where you are rich?
 
+### Usage
 
+Build and run with
+```
+sbt run
+```
 
+Then 
+```
+http://localhost:8080/lotto?input=<parameters>
+```
 
+Where `params` is a comma separated list of # of generated numbers, and the max value of the numbers. For instance, if you want 6 numbers from 1-47 it would be
 
+```
+http://localhost:8080/lotto?input=6,47
+```
 
+Or, if you want 5 numbers from 1-50 and 2 numbers from 1-12, it would be 
 
+```
+http://localhost:8080/lotto?input=5,50,2,12
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-\* guarantee subject to massive caveats and doesn't constitute a guarantee and depends on precise definition of "guarantee" "you", and "win".
+Good luck - you don't need it!
