@@ -14,8 +14,7 @@ trait Lotto {
 }
 
 object Lotto extends LazyLogging {
-  final case class Name(name: String) extends AnyVal
-  final case class Response(nums: Seq[(Int, Seq[Int])]) extends AnyVal
+  final case class Response(nums: Seq[(Int, Seq[Int])])
   val randomService = new RandomService(QRNG.f)
   object Response {
     //TODO: build a nicer response
