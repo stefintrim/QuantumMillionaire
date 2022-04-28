@@ -5,7 +5,7 @@ Welcome to the only GitHub project that absolutely ***100% guarantees*** that yo
 
 # Watch The Universe Split Before Your Very Eyes!
 
-By using quantum mechanical theory, this web app, based on Scala, Cats Effect and Http4s can generate a set of quantum random numbers that will make a version of you rich, rich, rich!
+By using quantum mechanical theory, this simple API, based on Scala, Cats Effect and Http4s can generate a set of quantum random numbers that will make a version of you rich, rich, rich!
 
 ## But How Does It Work?
 
