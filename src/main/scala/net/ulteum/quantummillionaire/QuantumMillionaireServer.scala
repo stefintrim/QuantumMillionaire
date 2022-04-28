@@ -10,7 +10,7 @@ object QuantumMillionaireServer {
 
   def run: IO[Nothing] = {
     val lottoAlg = Lotto.impl
-    val httpApp = QuantumMillionaireRoutes.helloWorldRoutes(lottoAlg).orNotFound
+    val httpApp = QuantumMillionaireRoutes.lottoRoutes(lottoAlg).orNotFound
     val finalHttpApp = Logger.httpApp(logHeaders = true, logBody = true)(httpApp)
     EmberServerBuilder.default[IO]
         .withHost(ipv4"0.0.0.0")

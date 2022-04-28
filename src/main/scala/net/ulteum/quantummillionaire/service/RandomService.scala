@@ -1,20 +1,23 @@
 package net.ulteum.quantummillionaire.service
 
+import cats.effect.IO
 import com.typesafe.scalalogging.LazyLogging
 import net.ulteum.quantummillionaire.model.NumberGroup
 
 import scala.annotation.tailrec
 
-class RandomService(randomFunction: Int => Seq[Int]) extends LazyLogging {
+class RandomService(randomFunction: Int => IO[Seq[Int]]) extends LazyLogging {
 
   /**
    * generate a sequence of random numbers for a [[NumberGroup]] using the random generator
    * @param numberGroup representation of size and count of numbers
    */
-  def generateNumberSequence(numberGroup: NumberGroup): Seq[Int] = {
-    val result = shuffle(1 to numberGroup.size, randomFunction(numberGroup.size))
-      .take(numberGroup.count)
-    if (numberGroup.isFullList) result else result.sorted
+  def generateNumberSequence(numberGroup: NumberGroup): IO[Seq[Int]] = {
+    randomFunction(numberGroup.size).map(rands => {
+      val result = shuffle(1 to numberGroup.size, rands)
+        .take(numberGroup.count)
+      if (numberGroup.isFullList) result else result.sorted
+    })
   }
 
   /**

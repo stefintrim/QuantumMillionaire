@@ -10,7 +10,7 @@ class HelloWorldSpec extends CatsEffectSuite {
   private[this] val retHelloWorld: IO[Response[IO]] = {
     val getHW = Request[IO](Method.GET, uri"/hello/world")
     val helloWorld = Lotto.impl
-    QuantumMillionaireRoutes.helloWorldRoutes(helloWorld).orNotFound(getHW)
+    QuantumMillionaireRoutes.lottoRoutes(helloWorld).orNotFound(getHW)
   }
 
   test("HelloWorld returns status code 200") {
