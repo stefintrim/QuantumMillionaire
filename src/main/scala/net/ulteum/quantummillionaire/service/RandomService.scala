@@ -6,7 +6,7 @@ import net.ulteum.quantummillionaire.model.NumberGroup
 
 import scala.annotation.tailrec
 
-class RandomService(randomFunction: Int => IO[Seq[Int]]) extends LazyLogging {
+class RandomService(randomFunction: Int => IO[Seq[Double]]) extends LazyLogging {
 
   /**
    * generate a sequence of random numbers for a [[NumberGroup]] using the random generator
@@ -16,7 +16,7 @@ class RandomService(randomFunction: Int => IO[Seq[Int]]) extends LazyLogging {
     randomFunction(numberGroup.size).map(rands => {
       val result = shuffle(1 to numberGroup.size, rands)
         .take(numberGroup.count)
-      if (numberGroup.isFullList) result else result.sorted
+      result
     })
   }
 
@@ -26,10 +26,10 @@ class RandomService(randomFunction: Int => IO[Seq[Int]]) extends LazyLogging {
    * @return
    */
   @tailrec
-  final def shuffle(values: Seq[Int], randoms: Seq[Int], index: Int = 0): Seq[Int] = {
+  final def shuffle(values: Seq[Int], randoms: Seq[Double], index: Int = 0): Seq[Int] = {
     val n = values.size
     if (index == n - 1) values
-    else shuffle(swap(values, index, index + (randoms(index) % (n - index))), randoms, index + 1)
+    else shuffle(swap(values, index, index + (randoms(index) * (n - index)).toInt), randoms, index + 1)
   }
 
   @tailrec

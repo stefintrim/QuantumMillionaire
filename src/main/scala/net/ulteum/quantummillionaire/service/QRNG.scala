@@ -15,6 +15,6 @@ object QRNG {
   private val httpClient: Client[IO] = JavaNetClientBuilder[IO].create
   private def request(n: Int) = httpClient.expect[QrngResponse](s"https://qrng.anu.edu.au/API/jsonI.php?length=$n&type=uint8&size=1")
 
-  def f: Int => IO[Seq[Int]] = n => request(n).map(_.data.take(n))
+  def f: Int => IO[Seq[Double]] = n => request(n).map(_.data.map(i => i.toDouble / 256).take(n))
 
 }
